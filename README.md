@@ -1,1 +1,3 @@
-# cpe103
+# CPE 103
+
+### Professor Paul Hatalsky

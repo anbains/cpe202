@@ -1,3 +1,4 @@
-# CPE 103
+# CPE 202
 
-### Professor Paul Hatalsky
+Labs and projects for Cal Poly CPE 202 with Professor Paul Hatalsky
+

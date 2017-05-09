@@ -84,3 +84,35 @@ def remove(list, index):
         list.length -= 1
         return removedElement, list
 
+ def foreach(lst, function):
+    element = lst.first_element
+    element.value = function(element.value)
+    for i in range(lst.length - 1):
+        element = element.next
+        element.value = function(element.value)
+
+
+def sort(lst, key, instructor):
+    if lst.length == 0:
+        return empty_list()
+    new_list = linkedList(lst.first_element.copy())
+    current_el = lst.first_element
+    el = current_el.copy()
+    for i in range(lst.length - 1):
+        el = el.next
+        current_el = el.copy()
+        to_compare = new_list.first_element
+        for j in range(new_list.length):
+            if key(current_el) < key(to_compare):
+                new_list = add(new_list, current_el.value, j)
+                break
+            to_compare = to_compare.next
+        else:
+            new_list = add(new_list, current_el.value, new_list.length)
+    if instructor:
+        lst = copy(new_list)
+    return new_list   
+    
+    
+ 
+

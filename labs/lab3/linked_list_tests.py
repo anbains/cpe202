@@ -100,6 +100,22 @@ class TestList(unittest.TestCase):
 
         list = Pair("memes", Pair(3, Pair("meme", None)))
         self.assertRaises(IndexError, remove_element, list, 7)
+        
+    def test_sort(self):
+        t = empty_list()
+        t = add(t, 1, 0)
+        t = add(t, 6, 0)
+        t = add(t, 25, 2)
+        t2 = sort(t, lambda x: x.value, False)
+        self.assertEqual(t.__str__() == '[6, 1, 25]' and t2.__str__() == '[1, 6, 25]', True)
+
+    def test_foreach(self):
+        t = empty_list()
+        t = add(t, 1, 0)
+        t = add(t, 6, 0)
+        t = add(t, 25, 2)
+        foreach(t, lambda x: x*x)
+        self.assertEqual(t.__str__(), '[36, 1, 625]')
 
 if __name__ == '__main__':
     unittest.main()
